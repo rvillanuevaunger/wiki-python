@@ -6,7 +6,6 @@ from collections import Counter
 import pandas as pd
 
 # Get Wikipedia page HTML via API
-
 ws = wikipedia.WikipediaPage('Web scraping')
 ws_html = ws.html()
 
@@ -17,7 +16,6 @@ soup = BeautifulSoup(ws_html, 'lxml')
 stop_words = list(get_stop_words('en'))
 
 #For each section identify titles, total word counts, and links
-
 for header in soup.find_all(['h1', 'h2', 'h3']): 
     title = header.get_text()  
     title = title[:-6]  
